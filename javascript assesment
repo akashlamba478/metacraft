@@ -1,0 +1,34 @@
+// creating a variable to hold NFT's
+const NFT = [];
+
+
+//storeing values of NFT's
+function mintNFT (Name, Creater, Value) {
+    const info = {"Name": Name, "Creater": Creater, "Value": Value};
+    NFT.push(info);
+}
+
+// printing the total number of NFTs
+function getTotalSupply() {                                      
+    const Total_NFT = NFT.length;
+    return Total_NFT;
+}
+
+//printing the metadata 
+function listNFTs () {
+    console.log("Nos\t\tName\t\tCreater\t\tValue")
+    for(i = 0; i<NFT.length; i++){
+        console.log(i + "\t\t"+ NFT[i].Name + "\t\t"+ NFT[i].Creater + "\t\t"+ NFT[i].Value); 
+    }
+}
+
+//Calling function to store values
+mintNFT("Paint", "A", "$1000");  
+mintNFT("Comic", "B", "$1500");
+mintNFT("Games", "C", "$1350");
+mintNFT("Cards", "D", "$1780");
+mintNFT("Music", "E", "$1140");
+
+listNFTs();                                                                      //this function is being used to list total number of NFT
+
+console.log("Total number of NFT stored are: "+ getTotalSupply());               //Here we are able to get the info of the NFT's stored
