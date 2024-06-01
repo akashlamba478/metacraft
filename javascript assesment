@@ -3,8 +3,8 @@ const NFT = [];
 
 
 //storeing values of NFT's
-function mintNFT (Name, Creater, Value) {
-    const info = {"Name": Name, "Creater": Creater, "Value": Value};
+function mintNFT (item1, quantity, price) {
+    const info = {"item1": item1, "item2": quantity, "item3": price};
     NFT.push(info);
 }
 
@@ -16,19 +16,20 @@ function getTotalSupply() {
 
 //printing the metadata 
 function listNFTs () {
-    console.log("Nos\t\tName\t\tCreater\t\tValue")
+    console.log("Nos\t\titem1\t\tquantity\t\tprice")
     for(i = 0; i<NFT.length; i++){
-        console.log(i + "\t\t"+ NFT[i].Name + "\t\t"+ NFT[i].Creater + "\t\t"+ NFT[i].Value); 
+        console.log(i + "\t\t"+ NFT[i].item1 + "\t\t"+ NFT[i].item2 + "\t\t"+ NFT[i].item3); 
     }
 }
 
 //Calling function to store values
-mintNFT("Paint", "A", "$1000");  
-mintNFT("Comic", "B", "$1500");
-mintNFT("Games", "C", "$1350");
-mintNFT("Cards", "D", "$1780");
-mintNFT("Music", "E", "$1140");
+mintNFT("sugar", "1", "45");  
+mintNFT("salt", "3", "90");
+mintNFT("rice", "1", "56");
+mintNFT("pulse", "5", "450");
+mintNFT("besan", "4", "320");
 
 listNFTs();                                                                      //this function is being used to list total number of NFT
 
 console.log("Total number of NFT stored are: "+ getTotalSupply());               //Here we are able to get the info of the NFT's stored
+
